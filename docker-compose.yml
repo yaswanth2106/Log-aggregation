@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+      - db
+
+  redis:
+    image: redis:7
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: logs
+      POSTGRES_PASSWORD: logs
+      POSTGRES_DB: logs
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    depends_on:
+      - api
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus

@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+redis
+celery
+prometheus-fastapi-instrumentator
+slowapi
+pybreaker
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+redis
+pydantic
+prometheus-fastapi-instrumentator
+python-dotenv
