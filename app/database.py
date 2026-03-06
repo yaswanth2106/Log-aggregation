@@ -2,7 +2,10 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 from fastapi import Depends
 from sqlalchemy.orm import Session
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
