@@ -84,13 +84,13 @@ def get_stats(db: Session = Depends(get_db)):
 
     cache_key = "log_stats"
 
-    cached = get_cache(cache_key)
-    if cached:
-        return cached
+    #cached = get_cache(cache_key)
+    #if cached:
+    #    return cached
 
     stats = crud.get_log_stats(db)
 
-    set_cache(cache_key, stats, ttl=60)
+    #set_cache(cache_key, stats, ttl=60)
 
     return stats
 
