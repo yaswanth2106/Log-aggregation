@@ -1,0 +1,11 @@
+__pycache__
+
+.pytest_cache
+app\__pycache__
+tests\__pycache__
+docker-compose.yml
+Dockerfile
+logs.db
+prometheus.yml
+pytest.ini
+start.sh
